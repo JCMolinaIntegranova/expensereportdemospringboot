@@ -1,0 +1,58 @@
+package com.integranova.spring.expensereportdemo.viewmodel.expensereport.piu;
+
+import io.swagger.annotations.ApiModel;
+
+import com.integranova.spring.expensereportdemo.viewmodel.PopulationRequestViewModel;
+import com.integranova.spring.expensereportdemo.viewmodel.QueryRequest;
+import com.integranova.spring.expensereportdemo.viewmodel.expensereport.filter.FExpenseReportDates;
+import com.integranova.spring.expensereportdemo.viewmodel.expensereport.filter.FExpenseReportAmount;
+import com.integranova.spring.expensereportdemo.viewmodel.expensereport.filter.FExpenseReportStatus;
+
+@ApiModel("com.integranova.spring.expensereportdemo.viewmodel.expensereport.piu.PIUExpenseReportProjectRequest")
+public class PIUExpenseReportProjectRequest extends PopulationRequestViewModel{
+
+    private FExpenseReportDates fExpenseReportDates;
+
+    private FExpenseReportAmount fExpenseReportAmount;
+
+    private FExpenseReportStatus fExpenseReportStatus;
+    
+    public void setFExpenseReportDates(FExpenseReportDates fExpenseReportDates) {
+        this.fExpenseReportDates = fExpenseReportDates;
+    }
+    
+    public FExpenseReportDates getFExpenseReportDates() {
+        return fExpenseReportDates;
+    }
+    
+    public void setFExpenseReportAmount(FExpenseReportAmount fExpenseReportAmount) {
+        this.fExpenseReportAmount = fExpenseReportAmount;
+    }
+    
+    public FExpenseReportAmount getFExpenseReportAmount() {
+        return fExpenseReportAmount;
+    }
+    
+    public void setFExpenseReportStatus(FExpenseReportStatus fExpenseReportStatus) {
+        this.fExpenseReportStatus = fExpenseReportStatus;
+    }
+    
+    public FExpenseReportStatus getFExpenseReportStatus() {
+        return fExpenseReportStatus;
+    }
+
+    @Override
+    public QueryRequest buildQueryRequest() {
+        QueryRequest queryRequest = super.buildQueryRequest();
+
+        if (fExpenseReportDates != null)
+            queryRequest.addFilterRequest(fExpenseReportDates.buildFilterRequest());
+
+        if (fExpenseReportAmount != null)
+            queryRequest.addFilterRequest(fExpenseReportAmount.buildFilterRequest());
+
+        if (fExpenseReportStatus != null)
+            queryRequest.addFilterRequest(fExpenseReportStatus.buildFilterRequest());
+        return queryRequest;
+    }
+}

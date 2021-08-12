@@ -1,0 +1,20 @@
+ALTER TABLE TM_EmployeeTeam DROP CONSTRAINT pk_TM_EmployeeTeam;
+ALTER TABLE TM_ProjectERTemplate DROP CONSTRAINT pk_TM_ProjectERTemplate;
+ALTER TABLE Employee DROP CONSTRAINT pk_Employee;
+ALTER TABLE ExpenseLine DROP CONSTRAINT pk_ExpenseLine;
+ALTER TABLE ExpenseReport DROP CONSTRAINT pk_ExpenseReport;
+ALTER TABLE PaymentType DROP CONSTRAINT pk_PaymentType;
+ALTER TABLE Project DROP CONSTRAINT pk_Project;
+ALTER TABLE ExpenseType DROP CONSTRAINT pk_ExpenseType;
+ALTER TABLE ExpenseCurrency DROP CONSTRAINT pk_ExpenseCurrency;
+ALTER TABLE Assignment DROP CONSTRAINT pk_Assignment;
+ALTER TABLE AppUser DROP CONSTRAINT pk_AppUser;
+ALTER TABLE AdminUser DROP CONSTRAINT pk_AdminUser;
+ALTER TABLE OperatorUser DROP CONSTRAINT pk_OperatorUser;
+ALTER TABLE Team DROP CONSTRAINT pk_Team;
+ALTER TABLE ERTemplate DROP CONSTRAINT pk_ERTemplate;
+ALTER TABLE ERLTemplate DROP CONSTRAINT pk_ERLTemplate;
+ALTER TABLE ExchangeHistory DROP CONSTRAINT pk_ExchangeHistory;
+ALTER TABLE SystemParam DROP CONSTRAINT pk_SystemParam;
+
+ALTER TABLE GridPreferences DROP CONSTRAINT pk_GridPreferences;
